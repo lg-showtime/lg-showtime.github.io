@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lg-showtime.github.io","root":"/","scheme":"Pisces","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="Scrapy入门：  安装 Pip install Scrapy 注意：安装过程中会有问题 出现VC++14.0 Twisted问题      解决办法：离线下载 并安装匹pip install XXX.whl 离线下载地https:&#x2F;&#x2F;www.lfd.uci.edu&#x2F;~gohlke&#x2F;pythonlibs&#x2F;     2. Pip install安装成功后进行Scrapybench出现àwin32">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ScrapyDay01">
+<meta property="og:url" content="https://lg-showtime.github.io/index.html/ScrapyDay01.html">
+<meta property="og:site_name" content="lg-showtime">
+<meta property="og:description" content="Scrapy入门：  安装 Pip install Scrapy 注意：安装过程中会有问题 出现VC++14.0 Twisted问题      解决办法：离线下载 并安装匹pip install XXX.whl 离线下载地https:&#x2F;&#x2F;www.lfd.uci.edu&#x2F;~gohlke&#x2F;pythonlibs&#x2F;     2. Pip install安装成功后进行Scrapybench出现àwin32">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lg-showtime.github.io/image/ScrapyDay01.png">
+<meta property="article:published_time" content="2020-11-14T11:21:11.000Z">
+<meta property="article:modified_time" content="2020-11-14T11:26:23.780Z">
+<meta property="article:author" content="lg-showtime">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lg-showtime.github.io/image/ScrapyDay01.png">
+
+
+<link rel="canonical" href="https://lg-showtime.github.io/index.html/ScrapyDay01">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ScrapyDay01 | lg-showtime
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">lg-showtime</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">大意了，没有闪</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+        </section>
+        <!--/noindex-->
+
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lg-showtime"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">lg-showtime</p>
+  <div class="site-description" itemprop="description">懂王</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </section>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner page posts-expand">
+      
+  
+  
+
+      
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">ScrapyDay01
+</h1>
+
+<div class="post-meta-container">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <p>Scrapy入门：</p>
+<ol>
+<li>安装<ol>
+<li>Pip install Scrapy</li>
+<li>注意：安装过程中会有问题<ol>
+<li>出现VC++14.0 Twisted问题</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>解决办法：离线下载 并安装匹pip install XXX.whl</p>
+<p>离线下载地<a target="_blank" rel="noopener" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">https://www.lfd.uci.edu/~gohlke/pythonlibs/</a></p>
+<pre><code>    2. Pip install安装成功后进行Scrapybench出现àwin32</code></pre>
+<p>解决办法：pipinstall pywin32</p>
+<ol start="2">
+<li>原理</li>
+</ol>
+<p>附图：</p>
+<p><img src="/image/ScrapyDay01.png" alt="ScrapyDay01"></p>
+<ol start="3">
+<li>小练习<ol>
+<li>新建项目</li>
+</ol>
+</li>
+</ol>
+<p>scrapystartproject项目名</p>
+<p>项目名最好为域名加spider方便后期管理</p>
+<pre><code>2. 创建爬虫 在项目名里面含有.cfg文件进行</code></pre>
+<p>scrapy genspider爬虫名 域名.com</p>
+<p>设置域名的目的：为指定域名爬取</p>
+<p>爬虫名字和项目名字一定不要一样</p>
+<p>创建完成后settings文件里面将君子协议设置为Flase</p>
+<pre><code>3. 分析页面</code></pre>
+<p>分析页面提取数据常用几种方法：</p>
+<p>1，xpath语法</p>
+<p>2，正则表达式</p>
+<pre><code>4. 运行并保存数据</code></pre>
+<p>运行方法在项目里运行命令</p>
+<p>scrapycrawl爬虫名</p>
+<p>scrapycrawl爬虫名-o名字.json</p>
+<p>scrapycrawl爬虫名-o名字.csv</p>
+<p>-o参数进行保存</p>
+<ol start="4">
+<li><p>附上爬取西拉代理ip的源码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="comment"># 爬虫目的：爬取高可匿的IP代理</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XiladailiSpider</span>(<span class="params">scrapy.Spider</span>):</span></span><br><span class="line">    name = <span class="string">&#x27;xiladaili&#x27;</span> <span class="comment"># 爬虫名</span></span><br><span class="line">    allowed_domains = [<span class="string">&#x27;xiladaili.com&#x27;</span>] <span class="comment"># 域名</span></span><br><span class="line">    start_urls = [<span class="string">&#x27;http://www.xiladaili.com/gaoni/&#x27;</span>] <span class="comment"># 目标网站</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span>(<span class="params">self, response</span>):</span> <span class="comment"># parse方法用于解析数据，获得数据</span></span><br><span class="line">        <span class="comment"># ip = response.xpath(&#x27;//tr/td[1]/text()&#x27;).getall()</span></span><br><span class="line">        <span class="comment"># print(ip)</span></span><br><span class="line"></span><br><span class="line">        Selectors = response.xpath(<span class="string">&#x27;//tr&#x27;</span>)</span><br><span class="line">        <span class="comment"># 循环遍历当前tr标签下的td标签</span></span><br><span class="line">        <span class="keyword">for</span> Selector <span class="keyword">in</span> Selectors:</span><br><span class="line">            <span class="comment"># 根据xpath获取对应的IP地址</span></span><br><span class="line">            ip = Selector.xpath(<span class="string">&#x27;./td[1]/text()&#x27;</span>).get()</span><br><span class="line">            <span class="comment"># 代理地址</span></span><br><span class="line">            address= Selector.xpath(<span class="string">&#x27;./td[4]/text()&#x27;</span>).get()</span><br><span class="line">            <span class="comment"># 响应速度</span></span><br><span class="line">            speed = Selector.xpath(<span class="string">&#x27;./td[5]/text()&#x27;</span>).get()</span><br><span class="line">            <span class="comment"># 存活时间</span></span><br><span class="line">            time = Selector.xpath(<span class="string">&#x27;./td[6]/text()&#x27;</span>).get()</span><br><span class="line">            <span class="comment"># 打分</span></span><br><span class="line">            score = Selector.xpath(<span class="string">&#x27;./td[8]/text()&#x27;</span>).get()</span><br><span class="line"></span><br><span class="line">            items = &#123;</span><br><span class="line">                <span class="string">&#x27;ip&#x27;</span>:ip,</span><br><span class="line">                <span class="string">&#x27;address&#x27;</span>:address,</span><br><span class="line">                <span class="string">&#x27;speed&#x27;</span>:speed,</span><br><span class="line">                <span class="string">&#x27;time&#x27;</span>:time,</span><br><span class="line">                <span class="string">&#x27;score&#x27;</span>:score</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">yield</span> items</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 设置翻页操作</span></span><br><span class="line">            <span class="comment"># 用于得到下一页的链接</span></span><br><span class="line">            next_page= response.xpath(<span class="string">&#x27;//li[16]/a/@href&#x27;</span>).get()</span><br><span class="line">            <span class="keyword">if</span> next_page:</span><br><span class="line">                print(next_page)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 拼接网址</span></span><br><span class="line">                next_url = response.urljoin(next_page[<span class="number">-2</span>:])</span><br><span class="line">                <span class="comment"># 发出新的请求，知道网页结束 callback 为回调函数 就是将请求到的响应在交给自己处理</span></span><br><span class="line">                <span class="keyword">yield</span> scrapy.Request(next_url,callback=self.parse)</span><br><span class="line">                <span class="comment"># 生成器</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lg-showtime</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+</html>

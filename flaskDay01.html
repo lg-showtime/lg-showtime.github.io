@@ -21,27 +21,27 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"lg-showtime.github.io","root":"/","scheme":"Gemini","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"lg-showtime.github.io","root":"/","scheme":"Pisces","version":"8.0.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
   <meta name="description" content="Flask 框架：MTV   WSGI：是为python语言定义的web服务器和框架之间的一种接口，协议规范。  路由：将url 路径和函数绑定在一块，更好的对用户点击的网址进行反馈，调用相应的函数返回相应的内容  app.py 文件： run方法参数设置   run(host &#x3D;‘IP地址’,port&#x3D;’端口号’，debug&#x3D;’’,) debug:默认关闭debug模式，为布尔类型 注意：如果h">
 <meta property="og:type" content="website">
-<meta property="og:title" content="lg-showtime">
-<meta property="og:url" content="https://lg-showtime.github.io/index.html/home/flask.html">
+<meta property="og:title" content="flaskDay01">
+<meta property="og:url" content="https://lg-showtime.github.io/index.html/flaskDay01.html">
 <meta property="og:site_name" content="lg-showtime">
 <meta property="og:description" content="Flask 框架：MTV   WSGI：是为python语言定义的web服务器和框架之间的一种接口，协议规范。  路由：将url 路径和函数绑定在一块，更好的对用户点击的网址进行反馈，调用相应的函数返回相应的内容  app.py 文件： run方法参数设置   run(host &#x3D;‘IP地址’,port&#x3D;’端口号’，debug&#x3D;’’,) debug:默认关闭debug模式，为布尔类型 注意：如果h">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://uploader.shimo.im/f/kewjy9FgPdjmzy6Z.png!thumbnail">
-<meta property="og:image" content="https://uploader.shimo.im/f/ldUyyBMNhlTj3IHI.png!thumbnail">
-<meta property="og:image" content="https://uploader.shimo.im/f/B13S091S2JYsC6Cs.png!thumbnail">
-<meta property="article:published_time" content="2020-11-10T13:06:16.910Z">
-<meta property="article:modified_time" content="2020-11-10T13:06:16.910Z">
+<meta property="og:image" content="https://lg-showtime.github.io/image/flask-1-1.png">
+<meta property="og:image" content="https://lg-showtime.github.io/image/flak-1-2.png">
+<meta property="og:image" content="https://lg-showtime.github.io/image/flask-1-3.png">
+<meta property="article:published_time" content="2020-11-14T12:57:11.000Z">
+<meta property="article:modified_time" content="2020-11-14T11:32:45.781Z">
 <meta property="article:author" content="lg-showtime">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://uploader.shimo.im/f/kewjy9FgPdjmzy6Z.png!thumbnail">
+<meta name="twitter:image" content="https://lg-showtime.github.io/image/flask-1-1.png">
 
 
-<link rel="canonical" href="https://lg-showtime.github.io/index.html/home/flask">
+<link rel="canonical" href="https://lg-showtime.github.io/index.html/flaskDay01">
 
 
 <script class="page-configurations">
@@ -54,7 +54,7 @@
   };
 </script>
 
-  <title> | lg-showtime
+  <title>flaskDay01 | lg-showtime
 </title>
   
 
@@ -264,7 +264,7 @@
     <div class="post-block" lang="zh-CN">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">
+<h1 class="post-title" itemprop="name headline">flaskDay01
 </h1>
 
 <div class="post-meta-container">
@@ -279,7 +279,7 @@
       
       <div class="post-body">
           <p>Flask 框架：MTV</p>
-<p><img src="https://uploader.shimo.im/f/kewjy9FgPdjmzy6Z.png!thumbnail" alt="图片"></p>
+<p><img src="/image/flask-1-1.png" alt="图片"></p>
 <ol>
 <li><p>WSGI：是为python语言定义的web服务器和框架之间的一种接口，协议规范。</p>
 </li>
@@ -294,9 +294,9 @@
 <ol start="3">
 <li>引用配置文件 通过app.config.from_object(Settings) 配置文件放在Settings.py 文件中</li>
 </ol>
-<p><img src="https://uploader.shimo.im/f/ldUyyBMNhlTj3IHI.png!thumbnail" alt="图片"></p>
+<p><img src="/image/flak-1-2.png" alt="图片"></p>
 <ol start="4">
-<li>Get 和 post 提交方式后如何获得？<br><img src="https://uploader.shimo.im/f/B13S091S2JYsC6Cs.png!thumbnail" alt="图片"></li>
+<li>Get 和 post 提交方式后如何获得？<br><img src="/image/flask-1-3.png" alt="图片"></li>
 </ol>
 
       </div>
